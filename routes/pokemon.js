@@ -1,6 +1,6 @@
 module.exports = {
     addPokemonPage: function(request, response) {
-        response.render('edit-pokemon');
+        response.render('edit-pokemon', {add : true});
     },
     addPokemon: function(request, response){
         let name = request.body.name;
@@ -20,7 +20,7 @@ module.exports = {
         let sp_defense = request.body.sp_defense;
         let speed = request.body.speed;
 
-        let query = `INSERT INTO pokemen (name, type1, type2, held_item, move1, move2, move3, move4, ability, level, hp, attack, defense, sp_attack, sp_defesne, speed) VALUES ('${name}', ${type1}', ${type2}', ${held_item}', ${move1}', ${move2}', ${move3}', ${move4}', ${ability}', ${level}', ${hp}', ${attack}', ${defense}', ${sp_attack}', ${sp_defense}', ${speed}',);`;
+        let query = `INSERT INTO pokemen (name, type1, type2, held_item, move1, move2, move3, move4, ability, level, hp, attack, defense, sp_attack, sp_defense, speed) VALUES ('${name}', '${type1}', '${type2}', '${held_item}', '${move1}', '${move2}', '${move3}', '${move4}', '${ability}', ${level}, ${hp}, ${attack}, ${defense}, ${sp_attack}, ${sp_defense}, ${speed});`;
 
         db.query(query, function(error, result){
             if (error) {
@@ -30,5 +30,21 @@ module.exports = {
             response.redirect('/');
         }
         )
+    },
+
+    editPokemonPage: function(request, response){
+        let pokemonId = request.params.id;
+        let query = `SELECT * FROM pokemen WHERE id = ${pokemonId};`;
+
+        db.query(query, function(error, result){
+            if (error) {
+                return response.status(500).send(error);
+            }
+            console.log(result[0]);
+            response.render('edit-pokemon', {
+                add : false,
+                pokemon: result[0]
+            });
+        });
     }
 }

@@ -1,16 +1,20 @@
 <%- include('partials/header'); %>
 <div class="container">
-    <form method="post" action="/add">
+    <% if (add || pokemon) { %>
+    <form method="post" action="<%=add ? 'add' : `edit/${pokemon.id`%>">
         <div class="form-row">
 
             <div class="form-group col-md-3">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" required>
+                <input type="text" class="form-control" name="name" value="<%= add ? '' : pokemon.name %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="type1">Type 1</label>
                 <select name="type1" class="form-control" required>
+                    <% if (!add) { %>
+                        <option selected><%= pokemon.type1 %></option>
+                    <% } %>
                     <option>Bug</option>
                     <option>Dark</option>
                     <option>Dragon</option>
@@ -35,6 +39,9 @@
             <div class="form-group col-md-3">
                 <label for="type2">Type 2</label>
                 <select name="type2" class="form-control" required>
+                    <% if (!add) { %>
+                        <option selected><%= pokemon.type2 %></option>
+                    <% } %>
                     <option>NONE</option>
                     <option>Bug</option>
                     <option>Dark</option>
@@ -59,70 +66,73 @@
 
             <div class="form-group col-md-3">
                 <label for="held_item">Held Item</label>
-                <input type="text" class="form-control" name="held_item" required>
+                <input type="text" class="form-control" name="held_item" value="<%= add ? '' : pokemon.held_item %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="move1">Move 1</label>
-                <input type="text" class="form-control" name="move1" required>
+                <input type="text" class="form-control" name="move1" value="<%= add ? '' : pokemon.move1 %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="move2">Move 2</label>
-                <input type="text" class="form-control" name="move2" required>
+                <input type="text" class="form-control" name="move2" value="<%= add ? '' : pokemon.move2 %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="move3">Move 3</label>
-                <input type="text" class="form-control" name="move3" required>
+                <input type="text" class="form-control" name="move3" value="<%= add ? '' : pokemon.move3 %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="move4">Move 4</label>
-                <input type="text" class="form-control" name="move4" required>
+                <input type="text" class="form-control" name="move4" value="<%= add ? '' : pokemon.move4 %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="ability">Ability</label>
-                <input type="text" class="form-control" name="ability" required>
+                <input type="text" class="form-control" name="ability" value="<%= add ? '' : pokemon.ability %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="level">Level</label>
-                <input type="number" class="form-control" name="level" required>
+                <input type="number" class="form-control" name="level" value="<%= add ? '' : pokemon.level %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="hp">HP</label>
-                <input type="number" class="form-control" name="hp" required>
+                <input type="number" class="form-control" name="hp" value="<%= add ? '' : pokemon.hp %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="attack">Attack</label>
-                <input type="number" class="form-control" name="attack" required>
+                <input type="number" class="form-control" name="attack" value="<%= add ? '' : pokemon.attack %>" required>
             </div>
 
             <div class="form-group col-md-3">
-                <label for="deffense">Deffense</label>
-                <input type="number" class="form-control" name="deffense" required>
+                <label for="defense">Defense</label>
+                <input type="number" class="form-control" name="defense" value="<%= add ? '' : pokemon.defense %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="sp_attack">Special Attack</label>
-                <input type="number" class="form-control" name="sp_attack" required>
+                <input type="number" class="form-control" name="sp_attack" value="<%= add ? '' : pokemon.sp_attack %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="sp_defense">Speical Defense</label>
-                <input type="number" class="form-control" name="sp_defense" required>
+                <input type="number" class="form-control" name="sp_defense" value="<%= add ? '' : pokemon.sp_defense %>" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="speed">Speed</label>
-                <input type="number" class="form-control" name="speed" required>
+                <input type="number" class="form-control" name="speed" value="<%= add ? '' : pokemon.speed %>" required>
             </div>
             
         </div>
-        <button type="submit" class="btn btn-success float-right">Add Pokemon</button>
+        <button type="submit" class="btn btn-success float-right"><%=add ? 'Add' : 'Update' %> Add Pokemon</button>
     </form>
+    <% } else { %>
+        <p class="text-center" color="white" style= "font-family: Comic Sans MS; font-size: 200%">No Pokemon found :(</p> 
+        <% } %>
 </div>

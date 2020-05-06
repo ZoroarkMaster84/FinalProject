@@ -42,11 +42,12 @@ let app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended : false}));
-app.use(express.json);
+app.use(express.json());
 
 //Set routes
 app.get('/', index.getHomePage);
 app.get('/add', pokemon.addPokemonPage);
+app.get('/edit/:id', pokemon.editPokemonPage);
 app.post('/add', pokemon.addPokemon);
 
 function listenCallback() {
