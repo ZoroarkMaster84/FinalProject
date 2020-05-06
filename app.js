@@ -48,6 +48,7 @@ app.use(express.json());
 app.get('/', index.getHomePage);
 app.get('/add', pokemon.addPokemonPage);
 app.get('/edit/:id', pokemon.editPokemonPage);
+app.get('/delete/:id', pokemon.deletePokemon);
 app.post('/add', pokemon.addPokemon);
 app.post('/edit/:id', pokemon.editPokemon);
 

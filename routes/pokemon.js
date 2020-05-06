@@ -83,7 +83,7 @@ module.exports = {
             defense = ${defense},
             sp_attack = ${sp_attack},
             sp_defense = ${sp_defense},
-            speed = ${speed},
+            speed = ${speed}
             WHERE id = ${pokemonId};`;
 
         db.query(query, function(error, result){
@@ -94,5 +94,19 @@ module.exports = {
             response.redirect('/');
 
             })
+        },
+        deletePokemon: function(request, response){
+            let pokemonId = request.params.id;
+
+            let query = `DELETE FROM pokemen WHERE id = ${pokemonId};`;
+            
+            db.query(query, function(error, result){
+                if (error) {
+                    return response.status(500).send(error);
+                }
+                
+                response.redirect('/');
+    
+                })
         }
     }
