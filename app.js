@@ -49,6 +49,7 @@ app.get('/', index.getHomePage);
 app.get('/add', pokemon.addPokemonPage);
 app.get('/edit/:id', pokemon.editPokemonPage);
 app.post('/add', pokemon.addPokemon);
+app.post('/edit/:id', pokemon.editPokemon);
 
 function listenCallback() {
     console.log(`Listening on http://${hostname}:${port}`);

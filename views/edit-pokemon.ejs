@@ -1,7 +1,7 @@
 <%- include('partials/header'); %>
 <div class="container">
     <% if (add || pokemon) { %>
-    <form method="post" action="<%=add ? 'add' : `edit/${pokemon.id`%>">
+        <form method="post" action="/<%=add ? 'add' : `edit/${pokemon.id}`%>">
         <div class="form-row">
 
             <div class="form-group col-md-3">
@@ -130,7 +130,7 @@
             </div>
             
         </div>
-        <button type="submit" class="btn btn-success float-right"><%=add ? 'Add' : 'Update' %> Add Pokemon</button>
+        <button type="submit" class="btn btn-success float-right"><%=add ? 'Add' : 'Update' %> Pokemon</button>
     </form>
     <% } else { %>
         <p class="text-center" color="white" style= "font-family: Comic Sans MS; font-size: 200%">No Pokemon found :(</p> 
