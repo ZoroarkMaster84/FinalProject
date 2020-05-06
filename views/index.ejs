@@ -1,0 +1,79 @@
+<%- include('partials/header'); %>
+<div>
+    <% if (pokemen.length > 0 ) { %>
+    <table class="table">
+        <thead class="thead-dark" style="font-family: Comic Sans MS; font-size: 80%;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type 1</th>
+                <th>Type 2</th>
+                <th>Held Item</th>
+                <th>Move 1</th>
+                <th>Move 2</th>
+                <th>Move 3</th>
+                <th>Move 4</th>
+                <th>Ability</th>
+                <th>Level</th>
+                <th>HP</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Special Attack</th>
+                <th>Speical Defense</th>
+                <th>Speed</th>
+            </tr>
+        </thead>
+        
+        <tbody style= "font-family: Comic Sans MS; font-size: 90%" >
+            <% for (let i = 0; i < pokemen.length; i++) { %>
+                <tr style= "background-color: 
+                <% if (pokemen[i].type1 == "Bug") { %>greenyellow<% } 
+                else if (pokemen[i].type1 == "Dark") { %>black<% }
+                else if (pokemen[i].type1 == "Dragon") { %>darkblue<% }
+                else if (pokemen[i].type1 == "Electric") { %>yellow<% } 
+                else if (pokemen[i].type1 == "Fairy") { %>pink<% } 
+                else if (pokemen[i].type1 == "Fighting") { %>maroon<% } 
+                else if (pokemen[i].type1 == "Fire") { %>red<% } 
+                else if (pokemen[i].type1 == "Flying") { %>skyblue<% } 
+                else if (pokemen[i].type1 == "Ghost") { %>indigo<% } 
+                else if (pokemen[i].type1 == "Grass") { %>green<% } 
+                else if (pokemen[i].type1 == "Ground") { %>brown<% } 
+                else if (pokemen[i].type1 == "Ice") { %>cadetblue<% } 
+                else if (pokemen[i].type1 == "Normal") { %>white<% } 
+                else if (pokemen[i].type1 == "Poison") { %>purple<% } 
+                else if (pokemen[i].type1 == "Psychic") { %>hotpink<% } 
+                else if (pokemen[i].type1 == "Rock") { %>burlywood<% } 
+                else if (pokemen[i].type1 == "Steel") { %>grey<% } 
+                else if (pokemen[i].type1 == "Water") { %>blue<% } %>;
+                color: 
+                <% if ((pokemen[i].type1 == "Dark") || (pokemen[i].type1 == "Dragon") || (pokemen[i].type1 == "Fighting") || (pokemen[i].type1 == "Ghost") || (pokemen[i].type1 == "Ice") || (pokemen[i].type1 == "Poison") || (pokemen[i].type1 == "Water")) { %>white<% }
+                else { %>black<% } %>";
+                >
+                <td><%= pokemen[i].id %></td>
+                <td><%= pokemen[i].name %></td>
+                <td><%= pokemen[i].type1 %></td>
+                <td><%= pokemen[i].type2 %></td>
+                <td><%= pokemen[i].held_item %></td>
+                <td><%= pokemen[i].move1 %></td>
+                <td><%= pokemen[i].move2 %></td>
+                <td><%= pokemen[i].move3 %></td>
+                <td><%= pokemen[i].move4 %></td>
+                <td><%= pokemen[i].ability %></td>
+                <td><%= pokemen[i].level %></td>
+                <td><%= pokemen[i].hp %></td>
+                <td><%= pokemen[i].attack %></td>
+                <td><%= pokemen[i].defense %></td>
+                <td><%= pokemen[i].sp_attack %></td>
+                <td><%= pokemen[i].sp_defense %></td>
+                <td><%= pokemen[i].speed %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <% } else { %>
+        <p class="text-center" color="white" style= "font-family: Comic Sans MS; font-size: 200%">No Pokemon found :(</p> 
+        <% } %>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<%- include('partials/header'); %>
+<div class="container">
+    <form method="post" action="/add">
+        <div class="form-row">
+
+            <div class="form-group col-md-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="type1">Type 1</label>
+                <select name="type1" class="form-control" required>
+                    <option>Bug</option>
+                    <option>Dark</option>
+                    <option>Dragon</option>
+                    <option>Electric</option>
+                    <option>Fairy</option>
+                    <option>Fighting</option>
+                    <option>Fire</option>
+                    <option>Flying</option>
+                    <option>Ghost</option>
+                    <option>Grass</option>
+                    <option>Ground</option>
+                    <option>Ice</option>
+                    <option>Normal</option>
+                    <option>Poison</option>
+                    <option>Psychic</option>
+                    <option>Rock</option>
+                    <option>Steel</option>
+                    <option>Water</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="type2">Type 2</label>
+                <select name="type2" class="form-control" required>
+                    <option>NONE</option>
+                    <option>Bug</option>
+                    <option>Dark</option>
+                    <option>Dragon</option>
+                    <option>Electric</option>
+                    <option>Fairy</option>
+                    <option>Fighting</option>
+                    <option>Fire</option>
+                    <option>Flying</option>
+                    <option>Ghost</option>
+                    <option>Grass</option>
+                    <option>Ground</option>
+                    <option>Ice</option>
+                    <option>Normal</option>
+                    <option>Poison</option>
+                    <option>Psychic</option>
+                    <option>Rock</option>
+                    <option>Steel</option>
+                    <option>Water</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="held_item">Held Item</label>
+                <input type="text" class="form-control" name="held_item" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="move1">Move 1</label>
+                <input type="text" class="form-control" name="move1" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="move2">Move 2</label>
+                <input type="text" class="form-control" name="move2" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="move3">Move 3</label>
+                <input type="text" class="form-control" name="move3" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="move4">Move 4</label>
+                <input type="text" class="form-control" name="move4" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="ability">Ability</label>
+                <input type="text" class="form-control" name="ability" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="level">Level</label>
+                <input type="number" class="form-control" name="level" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="hp">HP</label>
+                <input type="number" class="form-control" name="hp" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="attack">Attack</label>
+                <input type="number" class="form-control" name="attack" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="deffense">Deffense</label>
+                <input type="number" class="form-control" name="deffense" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="sp_attack">Special Attack</label>
+                <input type="number" class="form-control" name="sp_attack" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="sp_defense">Speical Defense</label>
+                <input type="number" class="form-control" name="sp_defense" required>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="speed">Speed</label>
+                <input type="number" class="form-control" name="speed" required>
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-success float-right">Add Pokemon</button>
+    </form>
+</div>
